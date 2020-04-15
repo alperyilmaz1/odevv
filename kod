@@ -1,0 +1,53 @@
+def ödev(ilkgün , günsayısı , yayılım):
+
+    toplam_hasta = [[1,ilkgün]]
+    etkin_hasta= []
+
+    a = 0
+    sayı = 0
+
+    if yayılım == 2:
+        for i in range(2, günsayısı + 1):
+
+            for m in range(len(toplam_hasta)):
+
+                if i - toplam_hasta[m][0] < 15:
+                    etkin_hasta.append([toplam_hasta[m][0], toplam_hasta[m][1]])
+
+            a = 0
+            for o in range(len(etkin_hasta)):
+                a += etkin_hasta[o][1]
+
+            toplam_hasta.append([i, a * 10])
+            print(etkin_hasta)
+            etkin_hasta.clear()
+
+
+    elif yayılım == 1 :
+        for i in range(2, günsayısı + 1):
+
+            for m in range(len(toplam_hasta)):
+
+                if i - toplam_hasta[m][0] < 14:
+                    etkin_hasta.append([toplam_hasta[m][0], toplam_hasta[m][1]])
+
+            a = 0
+            for o in range(len(etkin_hasta)):
+                a += etkin_hasta[o][1]
+
+            toplam_hasta.append([i, a * 1])
+
+            #print(etkin_hasta)
+            etkin_hasta.clear()
+    for k in range(len(toplam_hasta)):
+        sayı+=toplam_hasta[k][1]
+    print(sayı)
+
+
+ödev(35,15,1)
+
+
+
+
+
+                
